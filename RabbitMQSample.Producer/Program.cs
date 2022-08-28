@@ -8,29 +8,18 @@ using System.Threading.Tasks;
 
 namespace RabbitMQSample.Producer
 {
-    internal class Program
+    static class Program
     {
         static void Main(string[] args)
         {
             var factory = new ConnectionFactory
             {
-                Uri =
-                new Uri("amqps://jowlimpx:yqG2VkYbFneUvAdZ-fAixHD_ixpgDywz@chimpanzee.rmq.cloudamqp.com/jowlimpx")
+                Uri = new Uri("amqps://jowlimpx:yqG2VkYbFneUvAdZ-fAixHD_ixpgDywz@chimpanzee.rmq.cloudamqp.com/jowlimpx")
             };
-            using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
-            {
-                channel.QueueDeclare("demo-queue",
-                durable: true,
-                exclusive: false,
-               autoDelete: false,
-               arguments: null);
-                var message = new { Name = "Producer", Message = "Im Here" };
-                var body = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message));
-
-
-                channel.BasicPublish("", "demo-queue", null, body);
-            }
+            using (var connection = factory.CreateConnection()) 
+            using (var channel = connection.CreateModel()) 
+            QueueProducer.Publish(channel);
+            
         }
     }
 }

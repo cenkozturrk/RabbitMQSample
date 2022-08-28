@@ -18,26 +18,11 @@ namespace RabbitMQSample.Consumer
                 new Uri("amqps://jowlimpx:yqG2VkYbFneUvAdZ-fAixHD_ixpgDywz@chimpanzee.rmq.cloudamqp.com/jowlimpx")
             };
             using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel())
-            {
-                channel.QueueDeclare("demo-queue",
-                durable: true,
-                exclusive: false,
-               autoDelete: false,
-               arguments: null);
+            using (var channel = connection.CreateModel()) 
+            QueueConsumer.Consumer(channel);
 
-                var consumer = new EventingBasicConsumer(channel); 
-                consumer.Received += (sender,e) =>
-                {
-                    var body = e.Body.ToArray();
-                    var messeage = Encoding.UTF8.GetString(body);
-                    Console.WriteLine(messeage);
 
-                };
 
-                channel.BasicConsume("demo-queue", true, consumer);
-                Console.ReadLine();
-            }
         }
     }
 }
