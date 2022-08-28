@@ -19,6 +19,7 @@ namespace RabbitMQSample.Consumer
             autoDelete: false,
             arguments: null);
             channel.QueueBind("mini-direct-exchange", "mini-direct-exchange", "account.init");
+            channel.BasicQos(prefetchSize: 0 , prefetchCount: 10 , global: false);
 
             var consumer = new EventingBasicConsumer(channel);
             consumer.Received += (sender, e) =>

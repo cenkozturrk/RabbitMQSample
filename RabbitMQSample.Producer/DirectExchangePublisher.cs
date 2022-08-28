@@ -14,7 +14,11 @@ namespace RabbitMQSample.Producer
     {
         public static void Publish(IModel channel)
         {
-            channel.ExchangeDeclare("mini-direct-exchange", ExchangeType.Direct);
+            var ttl = new Dictionary<string, object>
+            {
+                { "x-message-ttl", 30000 }
+            };
+            channel.ExchangeDeclare("mini-direct-exchange", ExchangeType.Direct, arguments: ttl);
             var count = 0;
 
             while (true)
