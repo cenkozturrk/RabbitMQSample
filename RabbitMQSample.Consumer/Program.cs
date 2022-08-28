@@ -18,8 +18,8 @@ namespace RabbitMQSample.Consumer
                 new Uri("amqps://jowlimpx:yqG2VkYbFneUvAdZ-fAixHD_ixpgDywz@chimpanzee.rmq.cloudamqp.com/jowlimpx")
             };
             using (var connection = factory.CreateConnection())
-            using (var channel = connection.CreateModel()) 
-            QueueConsumer.Consumer(channel);
+            using (var channel = connection.CreateModel())
+            DirectExchangeConsumer.Consumer(channel);
 
 
 
