@@ -12,6 +12,7 @@ namespace RabbitMQSample.Consumer
     {
         public static void Consumer(IModel channel)
         {
+            // Direct exchange used here.
             channel.ExchangeDeclare("mini-direct-exchange", ExchangeType.Direct);
             channel.QueueDeclare("mini-direct-queue",
             durable: true,
