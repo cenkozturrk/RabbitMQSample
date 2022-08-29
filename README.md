@@ -1,4 +1,4 @@
-    RABBITMQ WİTH DOCKER,CLOUDAMPQ
+    RABBITMQ WİTH DOCKER/CLOUDAMPQ
 
 -A small example of how the Rabbitmq library and system works.
 
