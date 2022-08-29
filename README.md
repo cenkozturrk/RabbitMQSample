@@ -4,6 +4,12 @@
 
 -There are RabbitMQ.Client and newtonsoft.json libraries.
 
+-All exchange types implemented. => As Exchange types
++Fanout
++Topic
++Direct
++header
+
 -Queues Output
 
 ![image](https://user-images.githubusercontent.com/88964984/187240979-22aea214-0bda-494a-9a80-ec1b2f50d412.png)
