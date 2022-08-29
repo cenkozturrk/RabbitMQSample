@@ -4,6 +4,8 @@
 
 -There are RabbitMQ.Client and newtonsoft.json libraries.
 
+-The application was created on a single project. If you want to use the application, run the producer library and open the bin file of the application and run the consumer exe.
+
 -All exchange types implemented. => As Exchange types
 +Fanout
 +Topic
