@@ -13,7 +13,7 @@ namespace RabbitMQSample.Producer
             };
             using (var connection = factory.CreateConnection()) 
             using (var channel = connection.CreateModel()) 
-            TopicExchangePublisher.Publish(channel);
+            HeaderExchangePublisher.Publish(channel);
             
         }
     }
