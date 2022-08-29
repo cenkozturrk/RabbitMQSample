@@ -1,8 +1,13 @@
     RABBITMQ WİTH DOCKER,CLOUDAMPQ
-![image](https://user-images.githubusercontent.com/88964984/187240605-4a02f717-5809-4651-97e2-a7aaed23f934.png)
-
-
 
 -A small example of how the Rabbitmq library and system works.
 
 -There are RabbitMQ.Client and newtonsoft.json libraries.
+
+-Queues Output
+
+![image](https://user-images.githubusercontent.com/88964984/187240979-22aea214-0bda-494a-9a80-ec1b2f50d412.png)
+
+-Excanges Output
+
+![image](https://user-images.githubusercontent.com/88964984/187241081-9f9c26e4-b0a6-4682-aee0-e37d9092e9d1.png)
