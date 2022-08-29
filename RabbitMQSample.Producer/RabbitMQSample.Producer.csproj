@@ -68,10 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DirectExchangePublisher.cs" />
+    <Compile Include="Exchanges\DirectExchangePublisher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueueProducer.cs" />
+    <Compile Include="Exchanges\QueueProducer.cs" />
+    <Compile Include="Exchanges\TopicExchangePublisher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
