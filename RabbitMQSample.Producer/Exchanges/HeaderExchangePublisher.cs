@@ -28,7 +28,7 @@ namespace RabbitMQSample.Producer
                 var properties = channel.CreateBasicProperties();
                 properties.Headers = new Dictionary<string, object>()
                 {
-                    {"account", "new" }
+                    {"account", "update" }
                 };
 
                 channel.BasicPublish("mini-header-exchange", string.Empty , properties , body);
